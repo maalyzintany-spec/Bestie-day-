@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Diva Bestie</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&family=Amiri&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+font-family:Arial;
+background: radial-gradient(circle at top, #7a0a1e, #1a0005);
+color:#fffdd0;
+}
+
+.screen{display:none;}
+.active{display:block;}
+
+h1{
+font-family:'Cinzel';
+color:#d4af37;
+}
+
+.btn{
+padding:15px 40px;
+border-radius:40px;
+border:none;
+background:#fffdd0;
+color:#4a0712;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.btn:hover{background:#d4af37;color:white;}
+
+#count{
+font-size:10rem;
+color:#d4af37;
+font-family:'Cinzel';
+}
+
+.cake{font-size:140px;}
+.candle{font-size:50px;position:relative;top:-30px;}
+.off{opacity:0.2;}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border:1px solid #d4af37;
+border-radius:20px;
+max-width:700px;
+}
+
+.arabic{
+font-family:'Amiri';
+color:#d4af37;
+font-size:2.5rem;
+margin-top:20px;
+}
+
+.small{
+font-family:'Cinzel';
+margin-top:20px;
+color:#d4af37;
+}
+
+.hello{
+font-size:5rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 -->
+<div id="s1" class="screen active">
+<div class="hello">🌸</div>
+<h1>Hey Diva… are you ready?</h1>
+<button class="btn" onclick="start()">READY</button>
+</div>
+
+<!-- 2 -->
+<div id="s2" class="screen">
+<div id="count">10</div>
+</div>
+
+<!-- 3 -->
+<div id="s3" class="screen">
+<h1>HAPPY BIRTHDAY MY DIVA</h1>
+
+<div onclick="cake()" style="cursor:pointer;">
+<div class="candle" id="c">🔥</div>
+<div class="cake">🎂</div>
+</div>
+
+<p>Make a wish & blow the candle</p>
+</div>
+
+<!-- 4 -->
+<div id="s4" class="screen">
+<h1>HAPPY BIRTHDAY MY BESTIE</h1>
+</div>
+
+<!-- 5 -->
+<div id="s5" class="screen">
+<h1 style="font-family:'Great Vibes';font-size:5rem;">I love you</h1>
+</div>
+
+<!-- 6 -->
+<div id="s6" class="screen">
+<div class="card">
+
+<h2>My Dearest Best Friend</h2>
+
+<p>
+You are not just my bestie… you are my safe place, my happiness, and my forever person.  
+I truly love you more than words can explain. I hope we stay together until the end of life.
+</p>
+
+<div class="arabic">✨ عام في طاعة الله حبيبتي ✨</div>
+
+<div class="small">
+May Girl<br>
+4 / 5 / 2006
+</div>
+
+</div>
+</div>
+
+<script>
+function show(id){
+document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+
+function start(){
+show('s2');
+let c=10;
+let t=setInterval(()=>{
+c--;
+document.getElementById('count').innerText=c;
+if(c===0){
+clearInterval(t);
+show('s3');
+}
+},1000);
+}
+
+function cake(){
+document.getElementById('c').innerText="💨";
+setTimeout(()=>{
+document.getElementById('c').classList.add('off');
+},400);
+
+setTimeout(()=>show('s4'),1500);
+setTimeout(()=>show('s5'),3000);
+setTimeout(()=>show('s6'),4500);
+}
+</script>
+
+</body>
+</html>
